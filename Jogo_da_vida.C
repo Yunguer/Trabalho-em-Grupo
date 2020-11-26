@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <windows.h>
 #include <conio.h>
+#include <locale.h>
 int main()
 {
+	setlocale(LC_ALL, "Portuguese");
     int x, y, g, o, tabuleiro[30][30], novotabuleiro[30][30];
     for(int i=0;i<30;i++){
         for(int j=0;j<30;j++){
