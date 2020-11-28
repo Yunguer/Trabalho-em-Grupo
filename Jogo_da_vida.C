@@ -46,7 +46,7 @@ int main()
     	for(int h=0; h<g; h++)
     	{
         system("cls||clear");
-	} 
+	 
 	for(int i=0;i<30;i++)
 	{
         	for(int j=0;j<30;j++)
