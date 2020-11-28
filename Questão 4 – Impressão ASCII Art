@@ -26,7 +26,8 @@ void ImprimirElefanteHorizontal(char M[23][23])
     }
 }
 
-int main(){
+int main()
+{
     char M[23][23];
     int i,j;
     printf("Seu Desenho:\n");
@@ -156,7 +157,7 @@ int main(){
 
 
     imprimirElefanteNormal(M);
-	ImprimirElefanteHorizontal(M);
+    ImprimirElefanteHorizontal(M);
 
     return 0;
 }
