@@ -73,6 +73,8 @@ int main()
 {
     char M[23][23];
     int i,j;
+    char op[2];
+    int ctop=0;
     printf("Seu Desenho:\n");
     for(i=0;i<23;i++)
     {
@@ -200,10 +202,32 @@ int main()
 
 
     imprimirElefanteNormal(M);
-    ImprimirElefanteHorizontal(M);
-    imprimirRotacaoSentidoHorario(M);
-    imprimirRotacaoSentidoAntiHorario(M);
-    imprimirElefanteVertical(M);
+    
+    	for(ctop=0;ctop<2;ctop++)
+	{
+    		scanf("%c",&op[ctop]);
+	}
+	printf("\n");
+	
+   	if(op[0] == 'R' && op[1] == '1' )
+	{
+    		imprimirRotacaoSentidoHorario(M);
+	}
+
+	else if(op[0] == 'R' && op[1] == '2' )
+	{
+   		imprimirRotacaoSentidoAntiHorario(M);
+	}
+
+	else if(op[0] == 'E' && op[1] == 'V' )
+	{
+    		imprimirElefanteVertical(M);
+	}
+
+	else if(op[0] == 'E' && op[1] == 'H' )
+	{
+    		ImprimirElefanteHorizontal(M);
+	}
 
     return 0;
 }
