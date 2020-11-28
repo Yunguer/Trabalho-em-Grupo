@@ -1,4 +1,31 @@
 #include<stdio.h>
+
+int i,j;
+
+void imprimirElefanteNormal(char M[23][23])
+{
+	for(i=0;i<23;i++)
+    {
+        for(j=0;j<23;j++)
+        {
+            printf("%c",M[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void ImprimirElefanteHorizontal(char M[23][23])
+{
+	for(i=22;i>=0;i--)
+    {
+        for(j=22;j>=0;j--)
+        {
+            printf("%c",M[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main(){
     char M[23][23];
     int i,j;
@@ -127,15 +154,10 @@ int main(){
     M[17][14] = '-';
 
 
-    for(i=0;i<23;i++)
-    {
-        for(j=0;j<23;j++)
-        {
-            printf("%c",M[i][j]);
-        }
-        printf("\n");
-    }
 
+    imprimirElefanteNormal(M);
+	ImprimirElefanteHorizontal(M);
 
     return 0;
 }
+
