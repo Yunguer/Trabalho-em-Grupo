@@ -203,31 +203,27 @@ int main()
 
     imprimirElefanteNormal(M);
     
-    	for(ctop=0;ctop<2;ctop++)
-	{
-    		scanf("%c",&op[ctop]);
-	}
-	printf("\n");
-	
-   	if(op[0] == 'R' && op[1] == '1' )
-	{
-    		imprimirRotacaoSentidoHorario(M);
-	}
-
-	else if(op[0] == 'R' && op[1] == '2' )
-	{
-   		imprimirRotacaoSentidoAntiHorario(M);
-	}
-
-	else if(op[0] == 'E' && op[1] == 'V' )
-	{
-    		imprimirElefanteVertical(M);
-	}
-
-	else if(op[0] == 'E' && op[1] == 'H' )
-	{
-    		ImprimirElefanteHorizontal(M);
-	}
+    for(ctop=0;ctop<2;ctop++)
+    {
+    	scanf("%c",&op[ctop]);
+    }
+    printf("\n");
+    if(op[0] == 'R' && op[1] == '1' )
+    {
+    	imprimirRotacaoSentidoHorario(M);
+    }
+    else if(op[0] == 'R' && op[1] == '2' )
+    {
+   	imprimirRotacaoSentidoAntiHorario(M);
+    }
+    else if(op[0] == 'E' && op[1] == 'V' )
+    {
+    	imprimirElefanteVertical(M);
+    }
+    else if(op[0] == 'E' && op[1] == 'H' )
+    {
+    	ImprimirElefanteHorizontal(M);
+    }
 
     return 0;
 }
