@@ -1,117 +1,120 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void m (char casasq [3][3]) {
-	printf("jogo da velha!\n");
-	printf("%c %c %c\n", casasq[0][0], casasq [0][1], casasq[0][2]);
-	printf("%c %c %c\n", casasq[1][0], casasq [1][1], casasq[1][2]);
-	printf("%c %c %c\n", casasq[2][0], casasq [2][1], casasq[2][2]);
+void jogodavelha(char posicao2[3][3])
+{
+	system("cls");
+	printf("\t %c | %c | %c \n",posicao2[0][0],posicao2[0][1],posicao2[0][2]);
+	printf("\t ----------\n");
+	printf("\t %c | %c | %c\n",posicao2[1][0],posicao2[1][1],posicao2[1][2]);
+	printf("\t ----------\n");
+	printf("\t %c | %c | %c\n",posicao2[2][0],posicao2[2][1],posicao2[2][2]);
+	
 }
-int main () {
-	
-	int x, y=0; // turnos do jogo e decide quem ganha, vez de cada jogador
-	int l, c, i, j; //linha e coluna
-	
-	char casasq [3][3] =
-	 { 
-	{'1','2','3'},
-	{'6','5','4'},
-	{'7','8','9'},
-	 };
-	for (i=0;i<=2;i++) {
-		for (j=0;j<=2;j++) {
-		casasq[i][j]=' ';
-		}
-	}
-	
-	do { //logica do jogo
-		m (casasq);
-		if (l<1 || c<1 ||l>3 ||c>3) {
-			l=0;
-			c=0;
-			printf ("jogada invalida\n");
-		} 
-		else if (casasq[l-1][c-1]!=' ') {
-			l=0;
-			c=0;
-			printf ("jogada invalida\n");
-		} 
-		else {
-		if(y%2==0) {
-			// se for a jogada do jogador 1
-			casasq[l-1][c-1]='1';
-		} 
-			else {
-				// se for a jogada do jogador 2
-				casasq[l-1][c-1]='2';
-		} 
-		y++;
-		x++;
-		}
-		
-		
-		// se o jogador 1 ganhar
-		if(casasq[0][0]=='1' && casasq[0][1]=='1' && casasq[0][2]=='1') {
-			x=111;
-		}
-		if(casasq[1][0]=='1' && casasq[1][1]=='1' && casasq[1][2]=='1') {
-			x=111;
-		}
-		if(casasq[2][0]=='1' && casasq[2][1]=='1' && casasq[2][2]=='1') {
-			x=111;
-		}
-		if(casasq[0][0]=='1' && casasq[1][0]=='1' && casasq[2][0]=='1') {
-			x=111;
-		}
-		if(casasq[0][1]=='1' && casasq[1][1]=='1' && casasq[2][1]=='1') {
-			x=111;
-		}
-		if(casasq[2][0]=='1' && casasq[2][1]=='1' && casasq[2][2]=='1') {
-			x=111;
-		}
-		if(casasq[0][0]=='1' && casasq[1][1]=='1' && casasq[2][2]=='1') {
-			x=111;
-		}
-		if(casasq[0][2]=='1' && casasq[1][1]=='1' && casasq[2][0]=='1') {
-			x=111;
-		}
-	
-		// se o jogador 2 ganhar
-		if(casasq[0][0]=='2' && casasq[0][1]=='2' && casasq[0][2]=='2') {
-			x=222;
-		}
-		if(casasq[1][0]=='2' && casasq[1][1]=='2' && casasq[1][2]=='2') {
-			x=222;
-		}
-		if(casasq[2][0]=='2' && casasq[2][1]=='2' && casasq[2][2]=='2') {
-			x=222;
-		}
-		if(casasq[0][0]=='2' && casasq[1][0]=='2' && casasq[2][0]=='2') {
-			x=222;
-		}
-		if(casasq[0][1]=='2' && casasq[1][1]=='2' && casasq[2][1]=='2') {
-			x=222;
-		}
-		if(casasq[2][0]=='2' && casasq[2][1]=='2' && casasq[2][2]=='2') {
-			x=222;
-		}
-		if(casasq[0][0]=='2' && casasq[1][1]=='2' && casasq[2][2]=='2') {
-			x=222;
-		}
-		if(casasq[0][2]=='2' && casasq[1][1]=='2' && casasq[2][0]=='2') {
-			x=222;
-		}
-		
-	}while(9 <= x); // se o numero de jogadas possiveis terminar
-	
-	if(x==111){
-	printf("Jogador 1 venceu\n");
-	}
-	if(x==222){
-	printf("Jogador 2 venceu\n");
-	}
-	if(x==10){
-	printf("Empate\n");
-	}
 
-
+int main()
+{
+    char posicao[3][3] = 
+    {
+        {'1','2','3',},
+        {'4','5','6',},
+        {'7','8','9',},
+    };
+    char loop;
+    int ctjogadas,l,c,vez = 0,i,j;
+    do
+    {
+        ctjogadas = 1;
+        for(i=0;i<=2;i++)
+        {
+            for(j=0;j<=2;j++)
+            {
+                posicao[i][j] = '0';
+            }
+        }
+        do
+        {
+            jogodavelha(posicao);
+            printf("\n");
+            if(vez%2==0)
+            {
+                printf("Primeiro jogador:\n");
+            }
+            else
+            {
+                printf("Segundo jogador:\n");
+            }
+            printf("Digite a linha: ");
+            scanf("%i",&l);
+            printf("Digite a coluna: ");
+            scanf("%i",&c);
+            if(l < 1 || c < 1 || l > 3 || c > 3)
+            {
+                l = 0;
+                c = 0;
+                printf("Posicao invalida\n");
+                printf("Tente novamente\n");
+                printf("\n");
+                system("pause");
+            }
+            else if(posicao[l-1][c-1] != '0')
+            {
+                l = 0;
+                c = 0;
+                printf("Posicao invalida\n");
+                printf("Tente novamente\n");
+                printf("\n");
+                system("pause");
+            }
+            else
+            {
+                if(vez%2==0)
+                {
+                    posicao[l-1][c-1] = '1';
+                }
+                else
+                {
+                    posicao[l-1][c-1] = '2';
+                }
+                vez++;
+                ctjogadas++;
+                    
+            }
+            if(posicao[0][0]=='1' && posicao[0][1]=='1'&& posicao[0][2]=='1'){ctjogadas = 11;}
+            if(posicao[1][0]=='1' && posicao[1][1]=='1'&& posicao[1][2]=='1'){ctjogadas = 11;}
+            if(posicao[2][0]=='1' && posicao[2][1]=='1'&& posicao[2][2]=='1'){ctjogadas = 11;}
+            if(posicao[0][0]=='1' && posicao[1][0]=='1'&& posicao[2][0]=='1'){ctjogadas = 11;}
+            if(posicao[0][1]=='1' && posicao[1][1]=='1'&& posicao[2][1]=='1'){ctjogadas = 11;}
+            if(posicao[0][2]=='1' && posicao[1][2]=='1'&& posicao[2][2]=='1'){ctjogadas = 11;}
+            if(posicao[0][0]=='1' && posicao[1][1]=='1'&& posicao[2][2]=='1'){ctjogadas = 11;}
+            if(posicao[0][2]=='1' && posicao[1][1]=='1'&& posicao[2][0]=='1'){ctjogadas = 11;}
+            
+            if(posicao[0][0]=='2' && posicao[0][1]=='2'&& posicao[0][2]=='2'){ctjogadas = 12;}
+            if(posicao[1][0]=='2' && posicao[1][1]=='2'&& posicao[1][2]=='2'){ctjogadas = 12;}
+            if(posicao[2][0]=='2' && posicao[2][1]=='2'&& posicao[2][2]=='2'){ctjogadas = 12;}
+            if(posicao[0][0]=='2' && posicao[1][0]=='2'&& posicao[2][0]=='2'){ctjogadas = 12;}
+            if(posicao[0][1]=='2' && posicao[1][1]=='2'&& posicao[2][1]=='2'){ctjogadas = 12;}
+            if(posicao[0][2]=='2' && posicao[1][2]=='2'&& posicao[2][2]=='2'){ctjogadas = 12;}
+            if(posicao[0][0]=='2' && posicao[1][1]=='2'&& posicao[2][2]=='2'){ctjogadas = 12;}
+            if(posicao[0][2]=='2' && posicao[1][1]=='2'&& posicao[2][0]=='2'){ctjogadas = 12;}
+        }
+        while(ctjogadas<=9);
+        jogodavelha(posicao);
+        printf("\n");
+        if(ctjogadas==10)
+        {
+            printf("Empate!\n");
+        }
+        if(ctjogadas==11)
+        {
+            printf("Parabens! Primeiro jogador ganhou!\n");
+        }
+        if(ctjogadas==12)
+        {
+            printf("Parabens! Segundo jogador ganhou!\n");
+        }
+        loop='s';
+    	system("pause");
+    }
+    while(loop=='s');
 }
