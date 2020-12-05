@@ -80,7 +80,7 @@ int main()
     {
         for(j=0;j<23;j++)
         {
-            scanf("%[^\n]",&M[i][j]);
+            scanf("%c",&M[i][j]);
         }
     }
     
