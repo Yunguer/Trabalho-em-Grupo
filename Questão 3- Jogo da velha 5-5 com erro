@@ -10,7 +10,7 @@ void jogodavelha(char posicao2[5][5])
 	printf("\t ------------------\n");
 	printf("\t %c | %c | %c | %c | %c\n",posicao2[2][0],posicao2[2][1],posicao2[2][2],posicao2[2][3],posicao2[2][4]);
 	printf("\t ------------------\n");
-	printf("\t %c | %c | %c | %c | %c\n",posicao2[3][0],posicao2[3][1],posicao2[3][2],posicao2[3][3],posicao2[3][3]);
+	printf("\t %c | %c | %c | %c | %c\n",posicao2[3][0],posicao2[3][1],posicao2[3][2],posicao2[3][3],posicao2[3][4]);
 	printf("\t ------------------\n");
 	printf("\t %c | %c | %c | %c | %c\n",posicao2[4][0],posicao2[4][1],posicao2[4][2],posicao2[4][3],posicao2[4][4]);
 	
